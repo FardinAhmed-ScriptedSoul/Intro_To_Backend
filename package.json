@@ -1,0 +1,23 @@
+{
+  "name": "intortobackend",
+  "version": "1.0.0",
+  "description": "Intro to backend",
+  "keywords": [
+    "Fardin"
+  ],
+  "homepage": "https://github.com/FardinAhmed-ScriptedSoul/Intro_To_Backend#readme",
+  "bugs": {
+    "url": "https://github.com/FardinAhmed-ScriptedSoul/Intro_To_Backend/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FardinAhmed-ScriptedSoul/Intro_To_Backend.git"
+  },
+  "license": "ISC",
+  "author": "Fardin",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
