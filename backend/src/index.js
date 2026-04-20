@@ -13,8 +13,8 @@ const startServer = async () => {
             console.error(`Server error: ${error.message}`);
         });
 
-        app.listen(process.env.PORT,()=>{
-            console.log(`Server is running on port ${process.env.PORT}`);
+        app.listen(process.env.PORT||8000,()=>{
+            console.log(`Server is running on port ${process.env.PORT||8000}`);
         })
     } catch (error) {
         console.error(`Error starting server: ${error.message}`);

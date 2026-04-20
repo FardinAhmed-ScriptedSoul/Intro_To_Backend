@@ -4,10 +4,14 @@ const registerUser = async (req, res) => {
     try {
         const { username, password, email } = req.body;
 
+        console.log(1);
+
         //basic validation
         if(!username || !email || !password){
             return res.status(400).json({ message: "All fields are required" });
         }
+
+        console.log(2);
 
         //check if user already exists
         const existing = await User.findOne({ $or: [{ username }, { email }] });
@@ -15,6 +19,7 @@ const registerUser = async (req, res) => {
             return res.status(409).json({ message: "Username or email already exists" });
         }
 
+        console.log(3);
         //create user
         const user = await User.create({
             username,
@@ -22,6 +27,8 @@ const registerUser = async (req, res) => {
             password,
             loggedIn: false,
         });
+
+        console.log(4);
 
         res.status(201).json({
             message: "User registered successfully",
@@ -50,7 +57,11 @@ const loginUser = async (req,res)=>{
         };
 
         //compare password
+        console.log("User found:", user.username);
+        console.log("Password in DB:", user.password);
+        console.log("Password received:", password);
         const isMatch = await user.comparePassword(password);
+        console.log("Password match result:", isMatch);
         if(!isMatch){
             return res.status(400).json({ message: "Invalid credentials" });
         }
